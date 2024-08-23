@@ -1,0 +1,13 @@
+properties:
+  webProxyHost: nifi.unifyhub.dev
+
+ingress:
+  enabled: true
+  className: traefik
+  hosts:
+    - nifi.unifyhub.dev
+  path: /
+  tls:
+    - secretName: tls-unifyhub-dev
+      hosts:
+        - nifi.unifyhub.dev

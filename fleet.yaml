@@ -1,0 +1,14 @@
+defaultNamespace: apache-nifi
+helm:
+  chart: .
+  releaseName: nifi
+
+targetCustomizations:
+- name: production
+  helm:
+    releaseName: nifi-release
+    valuesFiles:
+      - values-production.yaml
+  clusterSelector:
+    matchLabels:
+      env: prod
